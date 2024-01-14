@@ -18,18 +18,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = on;
 
-DROP DATABASE IF EXISTS "StockManager";
---
--- TOC entry 4854 (class 1262 OID 16535)
--- Name: StockManager; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE "StockManager" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Russian_Russia.1251';
-
-
-ALTER DATABASE "StockManager" OWNER TO postgres;
-
-\connect "StockManager"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
