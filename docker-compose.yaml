@@ -14,7 +14,7 @@ services:
       - ./scripts:/docker-entrypoint-initdb.d
 
   app:
-    build: JavaProject/
+    build: ./
     ports:
       - "8080:8080"
     depends_on:
