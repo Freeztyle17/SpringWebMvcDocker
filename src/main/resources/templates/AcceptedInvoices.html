@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Принятые накладные</title>
+</head>
+<body class="bodyBg">
+
+<header class="topMenu">
+  <ul>
+    <a>Список накладных</a>
+  </ul>
+</header>
+
+<table style="height: 100px; margin-top: 50px; background-color: grey; margin:auto;">
+
+  <thead>
+  <tr class="tableHead">
+    <td class="tableHeadTd">id</td>
+    <td class="tableHeadTd">Поставщик</td>
+    <td class="tableHeadTd">Дата поставки</td>
+    <td class="tableHeadTd">№ накладной</td>
+    <td class="tableHeadTd">Сумма накладной</td>
+    <td class="tableHeadTd">Номенклатур</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr th:each="invoice: ${AcceptedInvoices}">
+    <td th:text="${invoice.getId()}"></td>
+    <td th:text="${invoice.getProvider().getName()}"></td>
+    <td th:text="${invoice.getDate_of_supply()}"></td>
+    <td th:text="${invoice.getInvoice_number()}"></td>
+    <td th:text="${invoice.getInvoice_summ()}"></td>
+    <td th:text="${invoice.getNomenclature_count()}"></td>
+  </tr>
+  </tbody>
+</table>
+    <a href="http://localhost:8080/index" class="button2">Назад</a>
+</body>
+
+<style>
+
+
+ .button2 {
+
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    text-decoration: none;
+    font-size: medium;
+    color: white;
+    font-family: cursive;
+    padding: .8em 1em calc(.8em + 3px);
+    margin-top: 50px;
+    border-radius: 3px;
+    color: rgb(0,0,0);
+    background: rgb(241, 212, 131);
+    box-shadow: 0 -3px rgb(170, 158, 48) inset;
+    transition: 0.2s;
+  }
+
+  .button2:hover { background: rgb(222, 184, 80); }
+
+  .button2:active {
+    background: rgb(32, 93, 22);
+    box-shadow: 0 3px rgb(46, 147, 33) inset;
+  }
+
+
+
+    a{
+        text-decoration: none;
+    }
+  /* головное меню */
+  .topMenu {
+    background-color: rgb(52, 168, 60);
+    text-align: center;
+    color: #56575C;
+    padding: 0;
+    font-size: xx-large;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: #56575C;
+    height: 67px;
+  }
+
+  .topMenu img {
+    height: 100%;
+    align-content: flex-start;
+  }
+
+  .topMenu li {
+    text-align: auto;
+    padding: 15px;
+    display: inline-block;
+  }
+
+  .topMenu li + li {
+    margin-left: 20px;
+  }
+
+  .topMenu a {
+    text-decoration: none;
+    color:#cfcfcf;
+  }
+
+  .topMenu ul {
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .topMenu li:hover {
+    border-radius: 10px;
+    background-color: rgb(33, 119, 39);
+  }
+
+
+
+
+  .img {
+    height: 500px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .bodyBg {
+    background-color: rgb(95, 184, 101);
+    background-size: 100%;
+    font-size: xx-large;
+    margin: 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .bodyBg p{
+    margin-top: 700px;
+  }
+
+  .bodybgT {
+    color: #fff;
+    margin: 0;
+    background: rgba(65, 61, 50, 0.733);
+    background-size: 100%;
+    text-align: center;
+    font-size: x-large;
+  }
+
+  .bodybgT h1 {
+    color: rgba(255, 240, 37, 0.877);
+    text-align: center;
+    font-size: x-large;
+  }
+
+  .bodybgT p {
+    margin: 20px;
+    text-align: justify;
+  }
+
+  .bodybgD {
+    margin: 0;
+    background: #AAAB;
+    background-size: 100%;
+    text-align: center;
+    font-size: x-large;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+  }
+
+
+  tr{
+
+    height: 25px;
+  }
+
+  td{
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    background-color: #fffafa;
+    border: 1px solid black;
+    border-radius: 3px;
+    border-collapse: collapse;
+  }
+
+
+
+  .tableHeadTd{
+    font-size: x-large;
+    font-family: fantasy;
+    color: rgb(0,0,0);
+    background-color: rgb(236,224,190);
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+    height: 18px;
+  }
+
+
+  .button1 {
+
+    display: inline-block;
+    height: 100px;
+    width: 400px;
+    text-decoration: none;
+    font-weight:  500;
+    color: white;
+    font-family: cursive;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+
+    background: rgb(82, 198, 88);
+    box-shadow: 0 -3px rgb(61, 143, 65) inset;
+    transition: 0.2s;
+  }
+
+  .button1:hover { background: rgb(72, 167, 77); }
+
+  .button1:active {
+    background: rgb(32, 93, 22);
+    box-shadow: 0 3px rgb(46, 147, 33) inset;
+  }
+
+
+
+
+  /* адаптация */
+  @media(max-width:1130px){
+    .topmenu {
+      font-size: large;
+      height: 51px;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+
+  /* непрозачность */
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  </style>
+
+</html>
